@@ -60,19 +60,19 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
 
     // Validate fields
     if (!studentName.trim()) {
-      setFormError('Please enter the Student name.');
+      setFormError('অনুগ্রহ করে শিক্ষার্থীর নাম প্রবেশ করান।');
       return;
     }
     if (!parentName.trim()) {
-      setFormError('Please enter the Parent/Guardian name.');
+      setFormError('অনুগ্রহ করে পিতা / মাতার নাম প্রবেশ করান।');
       return;
     }
     if (!phone.trim()) {
-      setFormError('Please enter a valid Phone contact number.');
+      setFormError('অনুগ্রহ করে একটি সচল মোবাইল নম্বর দিন।');
       return;
     }
     if (!/^\d{11,}$/.test(phone.replace(/\D/g, ''))) {
-      setFormError('Please enter a valid 11-digit mobile number.');
+      setFormError('১১ ডিজিটের সঠিক মোবাইল নম্বর দিন।');
       return;
     }
 
@@ -88,7 +88,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
         programId: selectedProgramId || 'primary-secondary',
         submittedAt: new Date().toLocaleString(),
         status: 'Received',
-        notes: notes.trim() || 'No additional note'
+        notes: notes.trim() || 'কোনো অতিরিক্ত তথ্য নেই'
       };
 
       const updated = [newInquiry, ...inquiries];
@@ -102,7 +102,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
       setNotes('');
       setIsSubmitting(false);
 
-      setSuccessMsg(`Success! Inquiry registered. Your reference number is ${newInquiry.id}. Our admission helper will call you at ${newInquiry.phone} within 2 hours.`);
+      setSuccessMsg(`সাফল্য! কুইজ বা ভর্তি আবেদন সফলভাবে রেজিস্টার করা হয়েছে। আপনার রেফারেন্স কোড হচ্ছে ${newInquiry.id}। আমাদের অ্যাডমিশন টিম আগামী ২ ঘণ্টার মধ্যে আপনার প্রদত্ত ${newInquiry.phone} নম্বরে সরাসরি কাউন্সেলিংয়ের জন্য কল করবে।`);
     }, 1200);
   };
 
@@ -119,13 +119,13 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-sm font-bold tracking-widest text-indigo-600 uppercase font-mono block mb-2">
-            📞 CONNECT WITH US
+            📞 আমাদের সাথে যোগাযোগ করুন
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Schedule an Academic Consultation
+            হোম রুটিন বা ভর্তি নিয়ে কথা বলুন
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-500 text-justify">
-            For admissions, specialized sibling scholarship requests, or routine notes collection, feel free to call us anytime or fill in the short form below.
+            ভর্তি, বিশেষ ছাড়ের আবেদন, স্কলারশিপ বা ক্লাসের সাধারণ রুটিন সংক্রান্ত যেকোনো বিষয়ে কথা বলতে সরাসর কল করুন অথবা নিচের সংক্ষিপ্ত ফর্মটি পূরণ করুন।
           </p>
         </div>
 
@@ -136,9 +136,9 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
           <div className="lg:col-span-5 space-y-6">
             
             <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm space-y-6 text-left">
-              <h3 className="text-xl font-extrabold text-gray-900">Direct Contact Details</h3>
+              <h3 className="text-xl font-extrabold text-gray-900">সরাসরি যোগাযোগের মাধ্যম</h3>
               <p className="text-sm text-gray-500 text-justify">
-                Our main office desk stands ready to assist parents and candidates during standard business hours (8:00 AM – 9:00 PM BST).
+                আমাদের অফিসিয়াল হেল্পডেস্ক অভিভাবক এবং শিক্ষার্থীদের একাডেমিক তথ্যের উত্তর প্রদানে সকাল ৮:০০ থেকে রাত ৯:০০ টা পর্যন্ত অবিরত প্রস্তুত রয়েছে।
               </p>
 
               {/* Phone Line Card */}
@@ -147,9 +147,9 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   <Phone className="h-6 w-6 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold text-indigo-500 block uppercase tracking-wider">OFFICIAL HELPLINE</span>
+                  <span className="text-xs font-mono font-bold text-indigo-500 block uppercase tracking-wider">অফিসিয়াল হেল্পলাইন</span>
                   <a href="tel:01750091995" className="text-2xl font-black text-gray-950 hover:underline">01750091995</a>
-                  <span className="text-[11px] text-gray-400 block mt-1">Free counseling callback available anytime.</span>
+                  <span className="text-[11px] text-gray-400 block mt-1">যেকোনো সময় পরামর্শ বা কলব্যাকের ব্যবস্থা রয়েছে।</span>
                 </div>
               </div>
 
@@ -161,7 +161,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   </svg>
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold text-emerald-600 block uppercase tracking-wider">WHATSAPP ADMISSION DESK</span>
+                  <span className="text-xs font-mono font-bold text-emerald-600 block uppercase tracking-wider">হোয়াটসঅ্যাপ অ্যাডমিশন ডেস্ক</span>
                   <a 
                     href="https://wa.me/8801750091995?text=Hello%20Brilliant%20Private%20Center,%20I'd%20like%20to%20inquire%20about%20admissions." 
                     target="_blank" 
@@ -170,7 +170,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   >
                     01750091995
                   </a>
-                  <span className="text-[11px] text-gray-400 block mt-1">Chat live or drop questions and files instantly.</span>
+                  <span className="text-[11px] text-gray-400 block mt-1">সরাসরি লিংকটিতে ক্লিক করে আমাদের সাথে চ্যাট শুরু করুন।</span>
                 </div>
               </div>
 
@@ -180,12 +180,12 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold text-teal-600 block uppercase tracking-wider">CAMPUS LOCATION</span>
+                  <span className="text-xs font-mono font-bold text-teal-600 block uppercase tracking-wider">ক্যাম্পাসের ঠিকানা</span>
                   <address className="text-base font-bold text-gray-800 not-italic mt-0.5" id="campus-address">
                     Brilliant Private Center<br />
-                    Ratanpur, Panchbibi, Joypurhat
+                    রতনপুর, পাঁচবিবি, জয়পুরহাট
                   </address>
-                  <span className="text-[11px] text-gray-400 block mt-1">Visit our coaching campus for classes and enrollment materials.</span>
+                  <span className="text-[11px] text-gray-400 block mt-1">সরাসরি পরিদর্শন করে ক্লাসরুম এবং শিক্ষা কার্যক্রম দেখার আমন্ত্রণ রইল।</span>
                 </div>
               </div>
 
@@ -198,7 +198,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   <span className="p-1.5 bg-indigo-50 border border-indigo-100 rounded-lg text-indigo-600">
                     <Compass className="h-4 w-4" />
                   </span>
-                  <h4 className="text-xs font-bold text-gray-900 font-mono tracking-wide uppercase">Interactive Campus Map</h4>
+                  <h4 className="text-xs font-bold text-gray-900 font-mono tracking-wide uppercase">ইন্টারেক্টিভ ক্যাম্পাসের গুগল ম্যাপ</h4>
                 </div>
                 <a 
                   href="https://maps.app.goo.gl/2XGz67NhhTgVuXoW9"
@@ -206,7 +206,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   rel="noopener noreferrer"
                   className="text-xs font-bold text-indigo-600 hover:text-indigo-700 hover:underline flex items-center space-x-1"
                 >
-                  <span>Expand Map</span>
+                  <span>ম্যাপ বড় করুন</span>
                   <span>↗</span>
                 </a>
               </div>
@@ -232,7 +232,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-3.5 px-4 rounded-xl transition-all flex items-center justify-center space-x-2 shadow-sm cursor-pointer"
               >
                 <MapPin className="h-4 w-4 text-teal-400" />
-                <span>Open in Google Maps Navigation</span>
+                <span>গুগল ম্যাপস নেভিগেশন চালু করুন</span>
               </a>
             </div>
 
@@ -241,9 +241,9 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
           {/* Right Block: Inquiry Form Card - 7 cols */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-xl text-left">
             <div className="border-b border-gray-100 pb-5 mb-6">
-              <h3 id="form-title" className="text-xl sm:text-2xl font-bold text-gray-900">Send an Academic Admission Request</h3>
+              <h3 id="form-title" className="text-xl sm:text-2xl font-bold text-gray-900">ভর্তির অগ্রিম আবেদন ফরম পূরণ করুন</h3>
               <p className="text-xs sm:text-sm text-gray-500 mt-1 text-justify">
-                Looking to elevate your GPA? Fill in this file and our student desk will schedule a quick counseling callback.
+                ভালো ফলাফল এবং জিপিএ-৫.০০ নিশ্চিত করতে চান? এই সংক্ষিপ্ত ফর্মটি পূরণ করুন এবং আমাদের পক্ষ থেকে ২ ঘণ্টার মধ্যে কল করে কাউন্সেলিং দেওয়া হবে।
               </p>
             </div>
 
@@ -270,14 +270,14 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 {/* Student Name */}
                 <div>
                   <label htmlFor="student-name" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
-                    Student Full Name <span className="text-red-500">*</span>
+                    শিক্ষার্থীর পূর্ণ নাম <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     id="student-name"
                     value={studentName}
                     onChange={(e) => setStudentName(e.target.value)}
-                    placeholder="e.g. Abrar Ahmed"
+                    placeholder="যেমন: আবরার আহমেদ"
                     className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 rounded-xl py-3 px-4 text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
@@ -286,14 +286,14 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 {/* Parent Name */}
                 <div>
                   <label htmlFor="parent-name" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
-                    Parent / Guardian Name <span className="text-red-500">*</span>
+                    পিতা / মাতার নাম <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     id="parent-name"
                     value={parentName}
                     onChange={(e) => setParentName(e.target.value)}
-                    placeholder="e.g. Rezwanul Islam"
+                    placeholder="যেমন: রেজওয়ানুল ইসলাম"
                     className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 rounded-xl py-3 px-4 text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
@@ -304,14 +304,14 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 {/* Parent/Student Mobile Number */}
                 <div>
                   <label htmlFor="contact-phone" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
-                    Mobile / Contact Number <span className="text-red-500">*</span>
+                    মোবাইল নম্বর <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
                     id="contact-phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="e.g. 017XXXXXXXX"
+                    placeholder="যেমন: ০১৭XXXXXXXX"
                     className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 rounded-xl py-3 px-4 text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
@@ -320,7 +320,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 {/* Desired Program Class Selection */}
                 <div>
                   <label htmlFor="desired-program" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
-                    Desired Coaching Program
+                    কাঙ্ক্ষিত কোচিং প্রোগ্রাম
                   </label>
                   <select
                     id="desired-program"
@@ -340,13 +340,13 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
               {/* Special message note */}
               <div>
                 <label htmlFor="inquiry-notes" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
-                  Specific Requirements or Subject Pain-Points
+                  विशेष কোনো চাহিদা বা দুর্বল বিষয়ে অতিরিক্ত ক্লাসের অনুরোধ
                 </label>
                 <textarea
                   id="inquiry-notes"
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Tell us about the student's weak subjects, prior scores, custom timing requests, or any special care expectations..."
+                  placeholder="শিক্ষার্থী কোন কোন বিষয়ে দুর্বল, পূর্বের ক্লাসের পরীক্ষার ফলাফল কেমন ছিল বা বিশেষ কোনো কেয়ার প্রত্যাশা করছেন কিনা সে সম্পর্কে বিস্তারিত জানান..."
                   rows={3}
                   className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 rounded-xl py-3 px-4 text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 resize-none"
                 />
@@ -362,12 +362,12 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>Saving Enquiry...</span>
+                      <span>তথ্য সংরক্ষণ করা হচ্ছে...</span>
                     </>
                   ) : (
                     <>
                       <CheckCircle className="h-4 w-4" />
-                      <span>Save Locally</span>
+                      <span>মেমোরিতে সেভ করুন</span>
                     </>
                   )}
                 </button>
@@ -378,11 +378,11 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   className="w-full bg-teal-600 hover:bg-teal-700 text-white rounded-xl py-3.5 px-4 font-bold text-sm tracking-wide shadow-lg hover:shadow-teal-200 hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <Send className="h-4 w-4" />
-                  <span>Send via Gmail</span>
+                  <span>জিমেইল (Gmail) দিয়ে পাঠান</span>
                 </a>
               </div>
               <p className="text-[11px] text-gray-500 text-center mt-2 font-medium">
-                Clicking <strong className="text-teal-600">Send via Gmail</strong> will pre-fill a school submission to <strong className="text-indigo-600">mh.mujahid7758@gmail.com</strong> on your device.
+                <strong className="text-teal-600">জিমেইল (Gmail) দিয়ে পাঠান</strong> বাটনে ক্লিক করলে সরাসরি আপনার পিসি বা ফোনের জিমেইল ব্যবহার করে <strong className="text-indigo-600">mh.mujahid7758@gmail.com</strong> ঠিকানায় আবেদন সম্পন্ন হবে।
               </p>
 
             </form>
@@ -400,11 +400,11 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                     <ListOrdered className="h-5 w-5" />
                   </span>
                   <h3 className="text-xl font-bold text-gray-900 font-sans">
-                    My Submitted Inquiries Status Center
+                    আমার ভর্তি আবেদনের বর্তমান আপডেট ও স্ট্যাটাস
                   </h3>
                 </div>
                 <p className="text-xs text-gray-500 mt-1 text-justify">
-                  These records are stored locally in your browser cache. You can track progress or reference them when calling our helpline desk.
+                  এই তথ্যগুলো সম্পূর্ণ সুরক্ষিতভাবে আপনার ব্রাউজার মেমোরিতে সেভ রয়েছে। সরাসরি আমাদের সাথে ফোন কলে তথ্য বিস্তারিত ঝালাই করতে রেফারেন্স কোড কাজ দেবে।
                 </p>
               </div>
 
@@ -413,7 +413,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 id="clear-cache-btn"
                 className="text-xs text-red-500 hover:text-red-700 font-bold font-mono py-1.5 px-3 rounded-lg hover:bg-red-50 shrink-0 transition-colors cursor-pointer"
               >
-                Clear History
+                ইতিহাস বা ক্যাশ মুছুন
               </button>
             </div>
 
@@ -422,12 +422,12 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
               <table className="w-full text-xs text-left text-gray-600 border-collapse">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-100 font-bold uppercase tracking-wider text-gray-500 text-[10px] font-mono">
-                    <th className="py-3 px-4">Inquiry Code</th>
-                    <th className="py-3 px-4">Student & Parent</th>
-                    <th className="py-3 px-4">Course Program</th>
-                    <th className="py-3 px-4">Contact Phone</th>
-                    <th className="py-3 px-4">Submitted At</th>
-                    <th className="py-3 px-4">Staff Action Status</th>
+                    <th className="py-3 px-4">আবেদন কোড</th>
+                    <th className="py-3 px-4">শিক্ষার্থী ও অভিভাবক</th>
+                    <th className="py-3 px-4">কোচিং প্রোগ্রাম</th>
+                    <th className="py-3 px-4">সরাসরি ফোন</th>
+                    <th className="py-3 px-4">দাখিলের সময়</th>
+                    <th className="py-3 px-4">আবেদনের বর্তমান অবস্থা</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -440,7 +440,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                         </td>
                         <td className="py-4 px-4">
                           <span className="block font-bold text-gray-900">{inq.studentName}</span>
-                          <span className="block text-gray-400 font-semibold">{inq.parentName} (Parent)</span>
+                          <span className="block text-gray-400 font-semibold">{inq.parentName} (অভিভাবক)</span>
                         </td>
                         <td className="py-4 px-4">
                           <span className="font-semibold text-gray-800">
@@ -456,7 +456,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                         <td className="py-4 px-4">
                           <span className="inline-flex items-center space-x-1.5 bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide border border-emerald-150">
                             <Clock className="h-3 w-3 shrink-0 text-emerald-600 animate-pulse" />
-                            <span>{inq.status} (Call Slated)</span>
+                            <span>{inq.status} (কল দেওয়া হবে)</span>
                           </span>
                         </td>
                       </tr>
@@ -470,7 +470,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
             <div className="bg-teal-50 border border-teal-100 p-4 rounded-xl mt-6 flex items-start space-x-3 text-xs leading-relaxed text-teal-800 font-medium">
               <HeartHandshake className="h-5 w-5 text-teal-600 shrink-0 mt-0.5" />
               <div>
-                <span>If you require immediate clearance or have not received a counseling call within 2 hours, please feel free to dial <strong>01750091995</strong> with your Inquiry Reference Code. We prioritize every student file.</span>
+                <span>জরুরি ভর্তি বা ২ ঘণ্টার মধ্যে কোনো ফিরতি কল না পেলে অনুগ্রহ করে রেফারেন্স কোডটি উল্লেখ করে সরাসরি আমাদের অফিশিয়াল নম্বরে (০১৭৫০০৯১৯৯৫) কল দিন। আমাদের কাছে প্রতিটি শিক্ষার্থীর ভবিষ্যৎ অত্যন্ত মূল্যবান।</span>
               </div>
             </div>
 

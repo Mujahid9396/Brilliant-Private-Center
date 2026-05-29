@@ -15,34 +15,34 @@ import {
 export default function Facilities() {
   const facilities = [
     {
-      title: 'Regular Class Routine',
-      desc: 'Never miss a topic. We provide automated physical and digital schedules, keeping both parents and students perfectly aligned on weekly syllabus progression.',
+      title: 'নিয়মিত ক্লাস রুটিন',
+      desc: 'কোনো টপিক বাদ পড়ে না। আমরা সুনির্দিষ্ট ক্লাস প্ল্যান প্রদান করি, যা ছাত্র এবং অভিভাবক উভয়কেই প্রতি সপ্তাহের সিলেবাস এগিয়ে যাওয়ার বিষয়ে অবহিত রাখে।',
       icon: Calendar,
-      tag: 'Strict Commitment'
+      tag: 'দৃঢ় প্রতিশ্রুতি'
     },
     {
-      title: 'Homework Support Desk',
-      desc: 'Our designated support desk is open 1 hour before and after batch timings. Experienced assistant teachers help students solve personal roadblocks and daily homework tasks.',
+      title: 'হোমওয়ার্ক সাপোর্ট ডেস্ক',
+      desc: 'আমাদের অভিজ্ঞ শিক্ষকগণ ক্লাসের আগে ও পরে শিক্ষার্থীদের পড়ালেখার যেকোনো সমস্যা ও প্রতিদিনের বাড়ির কাজ সমাধান করতে আন্তরিকভাবে সাহায্য করে থাকেন।',
       icon: ClipboardCheck,
-      tag: 'Special Assistance'
+      tag: 'বিশেষ সহায়তা'
     },
     {
-      title: 'Model Test Exams',
-      desc: 'We replicate accurate exam hall constraints, OMR answer scripts, time pressures, and strict board grading keys so candidates can conquer stress prior to public exams.',
+      title: 'মডেল টেস্ট পরীক্ষা',
+      desc: 'আমরা পরীক্ষার আসল হলের শতভাগ পরিবেশ, ওএমআর শিট এবং বোর্ড স্ট্যান্ডার্ডের উত্তরপত্র মূল্যায়নের মাধ্যমে শিক্ষার্থীদের বোর্ড পরীক্ষার ভয় দূর করি।',
       icon: FileCheck2,
-      tag: 'Practice Makes Perfect'
+      tag: 'সর্বোত্তম অনুশীলন'
     },
     {
-      title: 'Study Materials & Notes',
-      desc: 'Premium, simplified lecture sheets, handwritten mathematics shortcut notebooks, and custom subject-wise question banks curated carefully by our academic panel.',
+      title: 'স্টাডি ম্যাটেরিয়াল ও অনন্য নোট',
+      desc: 'সহজ ভাষায় তৈরি এক্সক্লুসিভ লেকচার শিট, হ্যান্ডনোট এবং অধ্যায়ভিত্তিক বিশেষ প্রশ্নব্যাংক, যা আমাদের অভিজ্ঞ শিক্ষক প্যানেল দ্বারা যত্ন সহকারে প্রস্তুতকৃত।',
       icon: BookMarked,
-      tag: 'High Quality Notes'
+      tag: 'উচ্চ-মানের নোট'
     },
     {
-      title: 'Progress Tracking System',
-      desc: 'Continuous evaluations and weekly score analytics are digitized and stored. We share immediate SMS alerts and progress reports with parents transparently.',
+      title: 'অগ্রগতি ট্র্যাকিং সিস্টেম',
+      desc: 'শিক্ষার্থীর নিয়মিত পরীক্ষার ফলাফল ও অগ্রগতি নিখুঁতভাবে ট্র্যাক করা হয়। গুরুত্বপূর্ণ প্রোগ্রেস আপডেট অভিভাবকের সাথে شفافভাবে শেয়ার করা হয়।',
       icon: TrendingUp,
-      tag: 'Active Guarding'
+      tag: 'সক্রিয় তদারকি'
     }
   ];
 
@@ -53,13 +53,13 @@ export default function Facilities() {
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-sm font-bold tracking-widest text-indigo-600 uppercase font-mono block mb-2">
-            🧑‍🎓 STUDENT EXPERIENCE
+            🧑‍🎓 শিক্ষার্থীদের অভিজ্ঞতা ও সুবিধা
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight font-sans">
-            Premium Facilities & Progress Tracking
+            সেরা কোর্স সুবিধাসমূহ ও প্রোগ্রেস ট্র্যাকিং
           </h2>
           <p id="facilities-intro-text" className="mt-4 text-lg text-gray-500 text-justify">
-            We don’t just teach lessons — we construct environments where student growth is supported from home routines to exams. See how our facilities align behind student achievement.
+            আমরা শুধু ক্লাসে পাঠদানই করি না—বরং এমন একটি নিয়মতান্ত্রিক পরিবেশ তৈরি করি যা শিক্ষার্থীর সার্বিক পড়াশোনার অগ্রগতি নিশ্চিত করে। দেখুন কিভাবে আমাদের সুবিধাসমূহ শিক্ষার্থীদের সেরা ফলাফলে ভূমিকা রাখছে।
           </p>
         </div>
 

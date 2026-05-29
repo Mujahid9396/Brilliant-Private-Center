@@ -19,12 +19,12 @@ export default function Footer() {
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center space-x-2 bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Unlock Your Potential</span>
+              <span>আপনার পড়াশোনার ভিত্তি গড়ুন</span>
             </div>
             
             {/* Final Message Mandatory string */}
             <p id="footer-final-message" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-              "At Brilliant Private Center, we don’t just teach—we build success stories. Join us today and unlock your full academic potential."
+              "Brilliant Private Center-এ আমরা শুধু পাঠদানই করি না—বরং প্রতিটি শিক্ষার্থীর সাফল্যের ইতিহাস তৈরি করি। আজই আমাদের সাথে যুক্ত হয়ে আপনার সুপ্ত মেধার বিকাশ ঘটান।"
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="lg:col-span-4 bg-slate-800/50 p-6 rounded-2xl border border-slate-750 text-left space-y-4">
             <div>
               <span className="text-[10px] font-mono tracking-widest text-indigo-400 font-bold uppercase block">
-                ADMISSION DESK DIRECT
+                সরাসরি অ্যাডমিশন হেল্পলাইন
               </span>
               <div className="flex items-center space-x-3.5 mt-2">
                 <div className="bg-indigo-600 text-white p-2.5 rounded-xl shrink-0">
@@ -42,14 +42,14 @@ export default function Footer() {
                   <a href="tel:01750091995" className="block text-xl font-bold font-sans text-white hover:underline">
                     01750091995
                   </a>
-                  <span className="text-xs text-gray-400 block">Available 24/7 for counseling</span>
+                  <span className="text-xs text-gray-400 block">যেকোনো সময় পড়াশোনার বিষয়ে কথা বলুন</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-3 border-t border-slate-755">
               <span className="text-[10px] font-mono tracking-widest text-emerald-400 font-bold uppercase block">
-                WHATSAPP CHAT INQUIRY
+                হোয়াটসঅ্যাপ চ্যাট ইনকোয়ারি
               </span>
               <div className="flex items-center space-x-3.5 mt-2">
                 <div className="bg-emerald-600 text-white p-2.5 rounded-xl shrink-0">
@@ -66,7 +66,7 @@ export default function Footer() {
                   >
                     01750091995
                   </a>
-                  <span className="text-xs text-gray-400 block">Instant chat response & help</span>
+                  <span className="text-xs text-gray-400 block">তাৎক্ষণিক কন্টাক্ট এবং চ্যাট সমাধান</span>
                 </div>
               </div>
             </div>
@@ -86,54 +86,54 @@ export default function Footer() {
                 Brilliant Private Center
               </span>
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed font-sans">
-              A trusted system for high-distinction academic performance. Helping students build robust fundamentals across junior school, high school, and boarding test pathways.
+            <p className="text-xs text-gray-400 leading-relaxed font-sans mt-2">
+              পড়াশোনার মান ও বোর্ড পরীক্ষায় জিপিএ-৫.০০ নিশ্চিতকরণের জন্য একটি নির্ভরতা ও বিশ্বস্ততার প্রতীক। আমরা শিক্ষার্থীদের প্রতিটি বিষয়ে গোড়া থেকে বেসিক তৈরি করতে বিশেষ অবদান রাখি।
             </p>
           </div>
 
           {/* Column 2 - Core Subjects */}
           <div className="space-y-4">
             <h4 className="font-bold text-white uppercase text-xs font-mono tracking-widest text-indigo-400">
-              Coaching Curriculums
+              আমাদের একাডেমিক কোর্সসমূহ
             </h4>
             <ul className="space-y-2 text-xs text-gray-400 font-medium">
-              <li>Class 6 Core Program</li>
-              <li>Class 7 Core Program</li>
-              <li>Class 8 Core Program</li>
-              <li>Class 9 Core Program</li>
-              <li>Class 10 Core Program</li>
-              <li>SSC Batch Program</li>
+              <li>৬ষ্ঠ শ্রেণির সাধারণ ব্যাচ</li>
+              <li>৭ম শ্রেণির সাধারণ ব্যাচ</li>
+              <li>৮ম শ্রেণির সাধারণ ব্যাচ</li>
+              <li>৯ম শ্রেণির পূর্ণাঙ্গ কোর্স</li>
+              <li>১০ম শ্রেণির বোর্ড সমাপনী ব্যাচ</li>
+              <li>এসএসসি (SSC) মডেল টেস্ট ব্যাচ</li>
             </ul>
           </div>
 
           {/* Column 3 - Student Guides */}
           <div className="space-y-4">
             <h4 className="font-bold text-white uppercase text-xs font-mono tracking-widest text-indigo-400">
-              Facilities Included
+              বিশেষ সুবিধাসমূহ
             </h4>
             <ul className="space-y-2 text-xs text-gray-400 font-medium">
-              <li>Syllabus Tracker & Routine charts</li>
-              <li>Homework correction & guidance desk</li>
-              <li>Weekly creative tests (CQ & MCQ)</li>
-              <li>Hand-out lecture booklets</li>
-              <li>Digital SMS performance alert system</li>
+              <li>সিলেবাস ট্র্যাকার ও স্টাডি রুটিন</li>
+              <li>হোমওয়ার্ক সমাধান ও বিশেষ গাইডলাইন ডেস্ক</li>
+              <li>অনলাইন ও অফলাইন সাপ্তাহিক পরীক্ষা</li>
+              <li>সহজ ভাষায় তৈরি হ্যান্ডআউট ও লেকচার শিট</li>
+              <li>ডিজিটাল SMS ও পারফর্মেন্স রিপোর্ট কার্ড</li>
             </ul>
           </div>
 
           {/* Column 4 - Address */}
           <div className="space-y-4">
             <h4 className="font-bold text-white uppercase text-xs font-mono tracking-widest text-indigo-400">
-              Main Secretariat Office
+              প্রধান ক্যাম্পাস অব রতনপুর
             </h4>
             <div className="space-y-3 text-xs text-gray-400">
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4.5 w-4.5 text-indigo-500 shrink-0 mt-0.5" />
                 <address className="not-italic leading-relaxed">
-                  Ratanpur, Panchbibi, Joypurhat
+                  রতনপুর, পাঁচবিবি, জয়পুরহাট
                 </address>
               </div>
               <div className="pt-2">
-                <span className="block text-gray-400">Contact Email: <a href="mailto:mh.mujahid7758@gmail.com" className="text-indigo-400 hover:underline">mh.mujahid7758@gmail.com</a></span>
+                <span className="block text-gray-400">ইমেইল করুন: <a href="mailto:mh.mujahid7758@gmail.com" className="text-indigo-400 hover:underline">mh.mujahid7758@gmail.com</a></span>
               </div>
             </div>
           </div>
@@ -143,12 +143,10 @@ export default function Footer() {
         {/* Lower copyright bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
           <span>
-            © {currentYear} Brilliant Private Center. All academic materials, exam sheets, and trademarks registered.
+            © {currentYear} Brilliant Private Center। সর্বস্বত্ব সংরক্ষিত। সকল পাঠ্য ও শিক্ষা উপকরণ কপিরাইট দ্বারা সুরক্ষিত।
           </span>
           <div className="flex items-center space-x-1">
-            <span>Crafted with</span>
-            <Heart className="h-3 w-3 text-red-500 fill-red-500" />
-            <span>for academic excellence in Bangladesh.</span>
+            <span>বাংলাদেশে মেধা বিকাশ ও সফল আগামী গড়ার প্রত্যয়ে সদা নিয়োজিত।</span>
           </div>
         </div>
 

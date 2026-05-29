@@ -9,30 +9,30 @@ export const quizData: Record<string, QuizQuestion[]> = {
   mathematics: [
     {
       id: 1,
-      question: 'Which of the following values satisfies the quadratic equation: x² - 5x + 6 = 0?',
-      options: ['x = 1 or x = 6', 'x = 2 or x = 3', 'x = -2 or x = -3', 'x = 0 or x = 5'],
+      question: 'নিচের কোন মানটি x² - 5x + 6 = 0 দ্বিঘাত সমীকরণটিকে সিদ্ধ করে?',
+      options: ['x = 1 অথবা x = 6', 'x = 2 অথবা x = 3', 'x = -2 অথবা x = -3', 'x = 0 অথবা x = 5'],
       correctAnswer: 1,
-      explanation: 'Since the equation can be factored as (x - 2)(x - 3) = 0, the roots of the equation are indeed x = 2 and x = 3. Substituting either into x² - 5x + 6 returns zero.'
+      explanation: 'যেহেতু সমীকরণটিকে উৎপাদকে বিশ্লেষণ করলে পাওয়া যায় (x - 2)(x - 3) = 0, তাই সমীকরণের মূলদ্বয় হলো x = 2 এবং x = 3। যেকোনো একটি মান সমীকরণের বামপক্ষে বসালে ডানপক্ষ শূন্য পাওয়া যায়।'
     },
     {
       id: 2,
-      question: 'The ratio of the angles of a triangle is 1:2:3. What is the measure of the largest angle in degrees?',
-      options: ['60°', '75°', '90°', '120°'],
+      question: 'একটি ত্রিভুজের তিনটি কোণের অনুপাত ১:২:৩ হলে, এর বৃহত্তম কোণটির মান কত ডিগ্রি?',
+      options: ['৬০°', '৭৫°', '৯০°', '১২০°'],
       correctAnswer: 2,
-      explanation: 'Let the angles be x, 2x, and 3x. Since the sum of angles is 180°, x + 2x + 3x = 180° -> 6x = 180° -> x = 30°. The largest angle is 3x = 3 * 30° = 90°.'
+      explanation: 'ধরি কোণগুলো হল x, 2x এবং 3x। যেহেতু ত্রিভুজের তিন কোণের সমষ্টি ১৮০°, তাই x + 2x + 3x = ১৮০° -> 6x = ১৮০° -> x = ৩০°। বৃহত্তম কোণটি হলো 3x = ৩ * ৩০° = ৯০°।'
     },
     {
       id: 3,
-      question: 'Find the value of log₂(32) + log₃(27).',
-      options: ['5', '8', '15', '2'],
+      question: 'log₂(32) + log₃(27) এর মান কত?',
+      options: ['৫', '৮', '১৫', '২'],
       correctAnswer: 1,
-      explanation: 'Since 32 = 2⁵, log₂(2⁵) = 5. Since 27 = 3³, log₃(3³) = 3. Therefore, log₂(32) + log₃(27) = 5 + 3 = 8.'
+      explanation: 'যেহেতু ৩২ = ২⁵, তাই log₂(২⁵) = ৫। আবার ২৭ = ৩³, তাই log₃(৩³) = ৩। অতএব, log₂(32) + log₃(27) = ৫ + ৩ = ৮।'
     }
   ],
   english: [
     {
       id: 1,
-      question: 'Identify the correct sentence structure for expressing a condition in the past that did not happen:',
+      question: 'অতীতের কোনো অসমাপ্ত বা অবাস্তব শর্ত বা ইচ্ছা প্রকাশের জন্য সঠিক বাক্য গঠন কোনটি?',
       options: [
         'If I would have studied, I would pass the test.',
         'If I had studied, I would have passed the test.',
@@ -40,49 +40,49 @@ export const quizData: Record<string, QuizQuestion[]> = {
         'Had I studied, I will pass the test.'
       ],
       correctAnswer: 1,
-      explanation: 'This is the Third Conditional, which is used to express past unreal situations. The format is: If + past perfect, would + have + past participle.'
+      explanation: 'এটি থার্ড কন্ডিশনাল (Third Conditional) বাক্য, যা অতীতে কোনো কিছু ঘটলে কী হতে পারত তা প্রকাশ করে। এর গঠন হলো: If + past perfect, would + have + past participle।'
     },
     {
       id: 2,
-      question: 'Choose the correct synonym for the word "EXCELLENCE":',
+      question: '"EXCELLENCE" শব্দটির সঠিক প্রতিশব্দ কোনটি?',
       options: ['Mediocrity', 'Distinction', 'Peculiarity', 'Diligence'],
       correctAnswer: 1,
-      explanation: 'Excellent, quality performance represents distinction and top-tier achievement. Mediocrity is the opposite, peculiarity means uniqueness/oddness, and diligence refers to hard work.'
+      explanation: 'EXCELLENCE অর্থ চমৎকার উৎকর্ষ বা শ্রেষ্ঠত্ব, যা "Distinction" (विशेष কৃতিত্ব বা অনন্য যোগ্যতা) কে নির্দেশ করে। Mediocrity অর্থ সাধারণ মানের বা গড়পরতা।'
     },
     {
       id: 3,
-      question: 'Fill in the blank: "Neither the teacher nor the students ______ present in the seminar yesterday."',
+      question: 'শূন্যস্থানটি পূরণ করুন: "Neither the teacher nor the students ______ present in the seminar yesterday."',
       options: ['was', 'were', 'is', 'are'],
       correctAnswer: 1,
-      explanation: 'According to the rule of proximity, when subject parts are joined by "neither... nor", the verb agrees with the closer subject ("the students", which is plural). Since the tense is past, "were" is correct.'
+      explanation: 'নিয়ম অনুযায়ী, যখন "neither... nor" দিয়ে কোনো সাবজেক্ট যুক্ত থাকে, তখন পরবর্তী নিকটবর্তী সাবজেক্ট অনুযায়ী ভার্ব সিলেক্ট করতে হয়। এখানে নিকটবর্তী সাবজেক্ট "students" (প্লুরাল)। যেহেতু গতকালের কথা বলা হয়েছে, তাই সঠিক উত্তর "were"।'
     }
   ],
   science: [
     {
       id: 1,
-      question: 'If the net force acting on a moving object is doubled, what happens to its acceleration according to Newton’s Second Law?',
+      question: 'নিউটনের দ্বিতীয় সূত্র অনুযায়ী, যদি কোনো গতিশীল বস্তুর ওপর প্রযুক্ত বল দ্বিগুণ করা হয়, তবে তার ত্বরণ কেমন হবে?',
       options: [
-        'It is cut in half.',
-        'It remains the same.',
-        'It doubles.',
-        'It increases fourfold.'
+        'অর্ধেক হয়ে যাবে।',
+        'একই থাকবে।',
+        'দ্বিগুণ হবে।',
+        'চার গুণ বৃদ্ধি পাবে।'
       ],
       correctAnswer: 2,
-      explanation: "According to Newton's Second Law, F = ma, which means acceleration (a) is directly proportional to force (F). If force is doubled while mass is constant, acceleration also doubles."
+      explanation: "নিউটনের দ্বিতীয় সূত্র (F = ma) অনুযায়ী, ত্বরণ (a) প্রযুক্ত বলের (F) সমানুপাতিক। ভর অপরিবর্তিত থাকলে বল দ্বিগুণ করলে ত্বরণও দ্বিগুণ হবে।"
     },
     {
       id: 2,
-      question: 'What is the physical state of water at standard atmospheric pressure when cooled to exactly -5°C?',
-      options: ['Gas', 'Liquid', 'Solid', 'Amorphous plasma'],
+      question: 'স্বাভাবিক বায়ুমণ্ডলীয় চাপে পানিকে ঠিক -৫° সেলসিয়াসে ঠান্ডা করলে জলীয় অবস্থা কেমন হবে?',
+      options: ['গ্যাসীয়', 'তরল', 'কঠিন (বরফ)', 'প্লাজমা'],
       correctAnswer: 2,
-      explanation: 'The freezing point of water is 0°C under standard atmospheric pressure. At -5°C, water is completely crystallized into solid state (ice).'
+      explanation: 'স্বাভাবিক চাপে পানির হিমাঙ্ক হলো ০° সেলসিয়াস। ০° সেলসিয়াসের নিচে (-৫° সেলসিয়াসে) তরল পানি সম্পূর্ণরূপে কঠিন বরফে রূপান্তরিত হয়।'
     },
     {
       id: 3,
-      question: 'Which of the following organelles is known as the "Powerhouse" of a vegetable or animal cell?',
-      options: ['Nucleus', 'Mitochondria', 'Chloroplast', 'Ribosome'],
+      question: 'উদ্ভিদ বা প্রাণী কোষের শক্তিঘর (Powerhouse) বলা হয় নিচের কোন অঙ্গাণুটিকে?',
+      options: ['নিউক্লিয়াস', 'মাইটোকন্ড্রিয়া', 'ক্লোরোপ্লাস্ট', 'রাইবোসোম'],
       correctAnswer: 1,
-      explanation: 'Mitochondria generate most of the chemical energy needed to power the cell’s biochemical reactions, stored in adenosine triphosphate (ATP).'
+      explanation: 'মাইটোকন্ড্রিয়া কোষের সকল জৈব রাসায়নিক বিক্রিয়ার জন্য আকর্ষণীয় ও প্রয়োজনীয় শক্তি উৎপাদন করে যা এডেনোসিন ট্রাইফসফেট (ATP) আকারে জমা থাকে।'
     }
   ]
 };

@@ -25,26 +25,25 @@ export default function Hero({ onExploreCourses, onTakeQuiz }: HeroProps) {
           <div className="lg:col-span-7 space-y-6 md:space-y-8 text-left">
             <div className="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
               <Sparkles className="h-4 w-4 text-indigo-600 animate-spin-slow" />
-              <span>Admissions Open for New Term 2026</span>
+              <span>নতুন সেশন ২০২৬-এ ভর্তি চলছে!</span>
             </div>
 
             <h1 id="hero-title" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Empowering Students To Build <span className="text-indigo-600 relative inline-block">
-                Success Stories
+              মেধা বিকাশে ও <span className="text-indigo-600 relative inline-block">
+                সাফল্যের গল্প রচনায়
                 <span className="absolute bottom-1.5 left-0 w-full h-2 bg-indigo-100 -z-10 rounded" />
               </span>
             </h1>
 
             <p id="hero-welcome-text" className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl text-justify">
-              Welcome to <strong>Brilliant Private Center</strong>, a trusted place for quality education and academic excellence. 
-              We help students achieve success through modern teaching methods, highly experienced teachers, and a supportive, friendly learning environment.
+              স্বাগতম <strong>Brilliant Private Center</strong>-এ, যা মানসম্মত শিক্ষা এবং উজ্জ্বল একাডেমিক অর্জনের একটি নির্ভরযোগ্য বিদ্যাপীঠ। আধুনিক শিক্ষাদান পদ্ধতি, অভিজ্ঞ শিক্ষক মণ্ডলী এবং একটি সহযোগী ও বন্ধুত্বপূর্ণ পরিবেশের মাধ্যমে আমরা শিক্ষার্থীদের কাঙ্খিত সাফল্য অর্জনে সহায়তা করি।
             </p>
 
             {/* Mission Tagline Highlight */}
             <div className="border-l-4 border-teal-500 bg-teal-50/50 px-5 py-3 rounded-r-xl max-w-xl">
-              <span className="block font-mono text-xs uppercase font-bold tracking-widest text-teal-600">Our Mission</span>
+              <span className="block font-mono text-xs uppercase font-bold tracking-widest text-teal-600">আমাদের লক্ষ্য</span>
               <p id="hero-tagline" className="text-lg font-bold text-teal-800">
-                🎯 Your success is our mission.
+                🎯 আপনার সাফল্যই আমাদের মূল লক্ষ্য।
               </p>
             </div>
 
@@ -55,7 +54,7 @@ export default function Hero({ onExploreCourses, onTakeQuiz }: HeroProps) {
                 onClick={onExploreCourses}
                 className="flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-indigo-100 hover:shadow-indigo-200 hover:-translate-y-0.5 transition-all cursor-pointer"
               >
-                <span>Browse Program List</span>
+                <span>কোর্স ও প্রোগ্রামসমূহ দেখুন</span>
                 <ArrowRight className="h-5 w-5" />
               </button>
 
@@ -65,23 +64,23 @@ export default function Hero({ onExploreCourses, onTakeQuiz }: HeroProps) {
                 className="flex items-center justify-center space-x-2 bg-white hover:bg-gray-50 border border-gray-200 text-gray-800 px-7 py-4 rounded-xl font-bold shadow-sm hover:border-gray-300 transition-all cursor-pointer"
               >
                 <BookOpen className="h-5 w-5 text-indigo-600 animate-pulse" />
-                <span>Try a Practice Quiz</span>
+                <span>ফ্রি কুইজ প্র্যাকটিস করুন</span>
               </button>
             </div>
 
             {/* Fast Stats / Features Row in Hero */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-100 max-w-lg">
               <div>
-                <span className="block text-2xl sm:text-3xl font-bold text-indigo-600 font-sans">5</span>
-                <span className="text-xs text-gray-500 font-medium">Years of Trust</span>
+                <span className="block text-2xl sm:text-3xl font-bold text-indigo-600 font-sans">৫+</span>
+                <span className="text-xs text-gray-500 font-medium">বছরের নির্ভরযোগ্যতা</span>
               </div>
               <div>
-                <span className="block text-2xl sm:text-3xl font-bold text-indigo-600 font-sans">98%</span>
-                <span className="text-xs text-gray-500 font-medium">Board Success</span>
+                <span className="block text-2xl sm:text-3xl font-bold text-indigo-600 font-sans">৯৮%</span>
+                <span className="text-xs text-gray-500 font-medium">বোর্ড পরীক্ষায় সফলতার হার</span>
               </div>
               <div>
-                <span className="block text-2xl sm:text-3xl font-bold text-indigo-600 font-sans">2</span>
-                <span className="text-xs text-gray-500 font-medium">Expert Mentors</span>
+                <span className="block text-2xl sm:text-3xl font-bold text-indigo-600 font-sans">২ জন</span>
+                <span className="text-xs text-gray-500 font-medium">দক্ষ মেন্টর</span>
               </div>
             </div>
           </div>
@@ -105,7 +104,7 @@ export default function Hero({ onExploreCourses, onTakeQuiz }: HeroProps) {
                     <Phone className="h-5 w-5 animate-pulse" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-gray-500 font-bold font-mono tracking-wider uppercase">ADMISSION CALL</span>
+                    <span className="block text-[10px] text-gray-500 font-bold font-mono tracking-wider uppercase">ভর্তির জন্য কল করুন</span>
                     <a href="tel:01750091995" className="block text-sm font-extrabold text-indigo-600 hover:underline">01750091995</a>
                   </div>
                 </div>
@@ -116,7 +115,7 @@ export default function Hero({ onExploreCourses, onTakeQuiz }: HeroProps) {
                     </svg>
                   </div>
                   <div>
-                    <span className="block text-[10px] text-emerald-600 font-bold font-mono tracking-wider uppercase">WHATSAPP CHAT</span>
+                    <span className="block text-[10px] text-emerald-600 font-bold font-mono tracking-wider uppercase">হোয়াটসঅ্যাপ চ্যাট</span>
                     <a 
                       href="https://wa.me/8801750091995?text=Hello%20Brilliant%20Private%20Center,%20I'd%20like%20to%20inquire%20about%20admissions." 
                       target="_blank" 

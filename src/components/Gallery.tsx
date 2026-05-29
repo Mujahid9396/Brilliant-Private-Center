@@ -28,29 +28,29 @@ export default function Gallery() {
     {
       id: 'classroom-activities',
       category: 'classes',
-      title: 'Classroom Activities',
-      description: 'Engaged, high-school coaching sessions featuring peer brainstorm boards, interactive visual learning formats, and collaborative task solutions.',
+      title: 'প্রাণবন্ত ক্লাসরুম কার্যক্রম',
+      description: 'আধুনিক ও সহজ ভিজ্যুয়াল পদ্ধতিতে শিক্ষার্থীদের পাঠদান করা হচ্ছে এবং শিক্ষার্থীরা একে অপরকে সহায়তার মাধ্যমে পড়ায় মনোনিবেশ করছে।',
       src: imgClassroom
     },
     {
       id: 'exam-sessions',
       category: 'exams',
-      title: 'Exam Sessions',
-      description: 'Strict, test-paper environment mimicking board patterns, preparing SSC candidates with rigorous timing control and high-pressure answer speed drills.',
+      title: 'কুইজ ও বোর্ড-প্যাটার্ন মডেল টেস্ট',
+      description: 'বোর্ড পরীক্ষার আদলে তৈরি কঠোর রিয়েল-টাইম পরিবেশে পরীক্ষা গ্রহণের মাধ্যমে শিক্ষার্থীদের ভীতি দূর করে আত্মবিশ্বাসী করে তোলা হয়।',
       src: imgExams
     },
     {
       id: 'student-achievements',
       category: 'achievements',
-      title: 'Student Achievements',
-      description: 'Smiles of academic victory. Satisfied student scholars celebrating top-bracket grades, GPA 5.0 results, and college credentials.',
+      title: 'সেরা মেধাবীদের জিপিএ-৫.০০ প্রাপ্তি',
+      description: 'সাফল্যের গৌরবোজ্জ্বল হাসি। জিপিএ-৫.০০ অর্জনকারী কৃতী শিক্ষার্থীদের সংবর্ধনা ও তাদের অভিভাবকগণের সাথে আনন্দময় মুহূর্ত।',
       src: imgAchievements
     },
     {
       id: 'coaching-events',
       category: 'events',
-      title: 'Coaching Events',
-      description: 'Guidance alignment. Active educational seminars, parental orientation boards, and award events conducted with transparency.',
+      title: 'শিক্ষামূলক সেমিনার ও পুরস্কার বিতরণী',
+      description: 'শিক্ষামূলক দিকনির্দেশনা ও পরামর্শ সভা, অভিভাবক মতবিনিময় সেমিনার এবং মেধাবী শিক্ষার্থীদের বিশেষ পুরষ্কার বিতরণী অনুষ্ঠান।',
       src: imgEvents
     }
   ];
@@ -71,6 +71,16 @@ export default function Gallery() {
     setLightboxIndex(prev => (prev !== null && prev < filteredItems.length - 1 ? prev + 1 : 0));
   };
 
+  const getCategoryLabel = (cat: string) => {
+    switch (cat) {
+      case 'classes': return 'ক্লাস কার্যক্রম';
+      case 'exams': return 'পরীক্ষা ও কুইজ';
+      case 'achievements': return 'সাফল্য ও মেধা';
+      case 'events': return 'বিশেষ সেমিনার';
+      default: return 'সব কার্যক্রম';
+    }
+  };
+
   return (
     <section id="gallery" className="py-16 md:py-24 bg-white text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,13 +88,13 @@ export default function Gallery() {
         {/* Gallery Headers */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-sm font-bold tracking-widest text-indigo-600 uppercase font-mono block mb-2">
-            🖼️ CAMPUS SNAPSHOTS
+            🖼️ ক্যাম্পাসের বাস্তব স্থিরচিত্র
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Our Gallery & Academic Env
+            ফটো গ্যালারি ও মনোরম পরিবেশ
           </h2>
           <p id="gallery-intro-text" className="mt-4 text-base sm:text-lg text-gray-500">
-            A window into the lives of student achievers. Explore real classroom dynamics, focused exams, and celebrations of merit.
+            আমাদের মেধাবী শিক্ষার্থীদের বর্ণিল সময়ের প্রতিচ্ছবি। এখানে পাবেন শ্রেণীকক্ষের পাঠদান, গুরুত্ব সহকারে পরীক্ষা গ্রহণ এবং কৃতিত্বের স্বীকৃতি উদযাপনের ছবিগুলো।
           </p>
         </div>
 
@@ -101,7 +111,7 @@ export default function Gallery() {
                   : 'bg-gray-50 hover:bg-gray-100 text-gray-600 border border-gray-200'
               }`}
             >
-              {cat === 'all' ? 'All Activities' : cat}
+              {cat === 'all' ? 'সব ছবি' : getCategoryLabel(cat)}
             </button>
           ))}
         </div>
@@ -128,8 +138,8 @@ export default function Gallery() {
 
               {/* Text metadata overlaid on hover */}
               <div className="absolute bottom-0 left-0 right-0 p-5 z-10 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-                <span className="text-[9px] font-mono font-bold text-teal-400 bg-teal-950/60 border border-teal-500/20 px-2 py-0.5 rounded uppercase">
-                  {item.category}
+                <span className="text-[9px] font-mono font-bold text-teal-400 bg-teal-950/60 border border-teal-500/20 px-2 py-0.5 rounded uppercase font-sans">
+                  {getCategoryLabel(item.category)}
                 </span>
                 <h3 className="text-sm font-bold text-white mt-1.5">{item.title}</h3>
                 <p className="text-[10px] text-gray-300 leading-normal mt-1 truncate">
@@ -149,7 +159,7 @@ export default function Gallery() {
         {filteredItems.length === 0 && (
           <div className="text-center py-12 text-gray-400 bg-gray-50 rounded-2xl">
             <ImageIcon className="h-10 w-10 mx-auto opacity-30 mb-2" />
-            <p>No gallery images found under this filter stream.</p>
+            <p>এই ফিল্টারের আওতায় কোনো ছবি খুঁজে পাওয়া যায়নি।</p>
           </div>
         )}
 
@@ -194,8 +204,8 @@ export default function Gallery() {
 
               {/* Info detail banner */}
               <div className="text-center text-white max-w-2xl mx-auto space-y-1 sm:space-y-2">
-                <span className="text-[10px] font-mono tracking-widest font-bold text-teal-400 uppercase">
-                  {filteredItems[lightboxIndex].category} snapshot
+                <span className="text-[10px] font-mono tracking-widest font-bold text-teal-400 uppercase font-sans">
+                  {getCategoryLabel(filteredItems[lightboxIndex].category)} স্থিরচিত্র
                 </span>
                 <h4 id="lightbox-title" className="text-lg sm:text-xl font-bold font-sans">
                   {filteredItems[lightboxIndex].title}
@@ -204,7 +214,7 @@ export default function Gallery() {
                   {filteredItems[lightboxIndex].description}
                 </p>
                 <span className="inline-block text-[10px] text-gray-500 font-mono">
-                  IMAGE {lightboxIndex + 1} OF {filteredItems.length}
+                  ছবি {lightboxIndex + 1} / {filteredItems.length}
                 </span>
               </div>
             </div>

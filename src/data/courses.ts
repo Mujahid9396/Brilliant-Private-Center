@@ -8,104 +8,104 @@ import { Course } from '../types';
 export const coursesData: Course[] = [
   {
     id: 'class-6',
-    name: 'Class 6 Coaching Program',
-    level: 'Class 6 Students',
-    targetAudience: 'Students of Class 6 seeking robust conceptual foundation in all core school subjects.',
-    schedule: 'Saturday to Thursday (Class Days)',
-    timeSlot: '9:00 AM – 10:00 AM',
-    weeklyTests: 'Friday (Exam Day)',
+    name: '৬ষ্ঠ শ্রেণির কোচিং প্রোগ্রাম',
+    level: '৬ষ্ঠ শ্রেণি',
+    targetAudience: '৬ষ্ঠ শ্রেণির সকল বিষয়ের শক্তিশালী বুনিয়াদ ও গোছানো প্রস্তুতির জন্য।',
+    schedule: 'শনিবার থেকে বৃহস্পতিবার (ক্লাস)',
+    timeSlot: 'সকাল ৯:০০ – সকাল ১০:০০',
+    weeklyTests: 'শুক্রবার (মূল্যায়ন পরীক্ষা দিন)',
     monthlyFee: 350,
-    description: 'An academic booster program designed for Class 6 school curriculum. We guide students step-by-step through core subjects like Mathematics, English, and Science with modern study materials.',
+    description: '৬ষ্ঠ শ্রেণির সম্পূর্ণ সিলেবাস ভিত্তিক একাডেমিক বুস্টার প্রোগ্রাম। আমরা গণিত, ইংরেজি ও বিজ্ঞান সহ মূল বিষয়গুলোতে সহজ ব্যাখ্যা এবং দিকনির্দেশনা দিয়ে থাকি।',
     highlights: [
-      'Comprehensive guidance on school textbooks and homework',
-      'Regular Friday exams to track student learning progress',
-      'Simplified mathematics problem-solving techniques',
-      'Personalized feedback from dedicated mentors'
+      'স্কুল পাঠ্যবই এবং হোমওয়ার্কের সম্পূর্ণ সমাধান গাইড',
+      'শিক্ষার্থীর অগ্রগতি যাচাইয়ে প্রতি শুক্রবার নিয়মিত পরীক্ষা',
+      'সহজ পদ্ধতিতে গাণিতিক সমস্যা সমাধানের কৌশল',
+      'অভিজ্ঞ শিক্ষকদের দ্বারা নিবিড় যত্ন ও তদারকি'
     ]
   },
   {
     id: 'class-7',
-    name: 'Class 7 Coaching Program',
-    level: 'Class 7 Students',
-    targetAudience: 'Students of Class 7 aiming to build advanced core competence and exam preparation.',
-    schedule: 'Saturday to Thursday (Class Days)',
-    timeSlot: '7:50 AM – 9:00 AM',
-    weeklyTests: 'Friday (Exam Day)',
+    name: '৭ম শ্রেণির কোচিং প্রোগ্রাম',
+    level: '৭ম শ্রেণি',
+    targetAudience: '৭ম শ্রেণির শিক্ষার্থীদের সৃজনশীল মেধা বিকাশ ও চূড়ান্ত পরীক্ষার সেরা প্রস্তুতি।',
+    schedule: 'শনিবার থেকে বৃহস্পতিবার (ক্লাস)',
+    timeSlot: 'সকাল ৭:৫০ – সকাল ৯:০০',
+    weeklyTests: 'শুক্রবার (মূল্যায়ন পরীক্ষা দিন)',
     monthlyFee: 400,
-    description: 'Provides in-depth lessons and regular exercise sheets for Class 7. Designed to simplify complex grammar, algebraic rules, and science concepts for superior academic performace.',
+    description: '৭ম শ্রেণির শিক্ষার্থীদের গভীর ও বিস্তারিত পাঠদান। বীজগণিত, কঠিন ব্যাকরণ এবং বিজ্ঞানের জটিল বিষয়গুলোকে সহজবোধ্য করে উপস্থাপন করার নির্ভরযোগ্য সমাধান।',
     highlights: [
-      'Interactive lectures focusing on foundational mathematics and science',
-      'Structured grammar worksheets and weekly vocabulary training',
-      'Creative question (CQ) format practice starting early',
-      'Regular progress discussions with parents'
+      'গণিত এবং বিজ্ঞানের মূল ভিত্তির ওপর বিশেষ লেকচার',
+      'গোছানো গ্রামার শিট এবং সাপ্তাহিক শব্দভাণ্ডার বৃদ্ধি সেশন',
+      'সৃজনশীল (CQ) পদ্ধতির সঠিক লিখন শৈলী অনুশীলন',
+      'অভিভাবকদের সাথে নিয়মিত প্রোগ্রেস রিভিউ মিটিং'
     ]
   },
   {
     id: 'class-8',
-    name: 'Class 8 Coaching Program',
-    level: 'Class 8 Students',
-    targetAudience: 'Students of Class 8 looking for professional academic guidance at an affordable rate.',
-    schedule: 'Saturday to Thursday (Class Days)',
-    timeSlot: '7:50 AM – 9:00 AM',
-    weeklyTests: 'Friday (Exam Day)',
+    name: '৮ম শ্রেণির কোচিং প্রোগ্রাম',
+    level: '৮ম শ্রেণি',
+    targetAudience: '৮ম শ্রেণির শিক্ষার্থীদের জন্য সেরা একাডেমিক গাইড এবং সুলভ মূল্যে সর্বোচ্চ তদারকি।',
+    schedule: 'শনিবার থেকে বৃহস্পতিবার (ক্লাস)',
+    timeSlot: 'সকাল ৭:৫০ – সকাল ৯:০০',
+    weeklyTests: 'শুক্রবার (মূল্যায়ন পরীক্ষা দিন)',
     monthlyFee: 400,
-    description: 'An ultra-affordable academic support batch for Class 8 students. Focuses on core subjects with intensive question paper solving and complete study sheets.',
+    description: '৮ম শ্রেণির শিক্ষার্থীদের জন্য চমৎকার সাশ্রয়ী ব্যাচ। প্রতিটি বিষয়ের সম্পূর্ণ সিলেবাস রিভিশন, লেকচার শিট এবং বোর্ড প্রশ্ন সলভিং সেশন।',
     highlights: [
-      'Special discounted coaching program to support families',
-      'In-depth review of core subjects (Math, English, Science)',
-      'Regular Friday evaluations and performance tracking',
-      'Clear, simple derivation of mathematical theorems'
+      'পরিবারের সামর্থ্যের কথা বিবেচনা করে বিশেষ ছাড় সম্বলিত কোর্স ফি',
+      'গণিত, ইংরেজি ও মূল বিজ্ঞানের বিস্তারিত অধ্যায় ভিত্তিক পর্যালোচনা',
+      'প্রতি শুক্রবার নিয়মিত মূল্যায়ন ও ট্র্যাকিং সিস্টেম',
+      'উপপাদ্য এবং কঠিন গাণিতিক সূত্রের সহজ বিশ্লেষণ'
     ]
   },
   {
     id: 'class-9',
-    name: 'Class 9 Coaching Program',
-    level: 'Class 9 Students',
-    targetAudience: 'Class 9 students transitioning to creative curriculum and selective board foundations.',
-    schedule: 'Saturday to Thursday (Class Days)',
-    timeSlot: '6:00 AM – 7:50 AM',
-    weeklyTests: 'Friday (Exam Day)',
+    name: '৯ম শ্রেণির কোচিং প্রোগ্রাম',
+    level: '৯ম শ্রেণি',
+    targetAudience: '৯ম শ্রেণির নতুন সৃজনশীল শিক্ষা ব্যবস্থা ও বোর্ড পরীক্ষার শক্তিশালী বুনিয়াদের জন্য।',
+    schedule: 'শনিবার থেকে বৃহস্পতিবার (ক্লাস)',
+    timeSlot: 'সকাল ৬:০০ – সকাল ৭:৫০',
+    weeklyTests: 'শুক্রবার (মূল্যায়ন পরীক্ষা দিন)',
     monthlyFee: 500,
-    description: 'An advanced curriculum support course for Class 9. Mentorship program focuses heavily on mathematical equations, English syntax, and core science modules.',
+    description: '৯ম শ্রেণির জন্য একটি বিশেষ অগ্রগামী পাঠ পরিকল্পনা। গাণিতিক সমীকরণ, ইংরেজি সিনট্যাক্স এবং মূল বিজ্ঞান মডিউলগুলোর উপরে বিশেষ জোর দেওয়া হয়ে থাকে।',
     highlights: [
-      'Step-by-step creative question solving techniques',
-      'Special focus on core physics, chemistry, and higher maths',
-      'Regular homework reviews and conceptual checklists',
-      'Compact batch sizes for personalized care and attention'
+      'ধাপে ধাপে সৃজনশীল প্রশ্ন সমাধানের আধুনিক কৌশল',
+      'পদার্থবিদ্যা, রসায়ন ও উচ্চতর গণিতের জটিল টপিকগুলোর সহজপাঠ',
+      'নিয়মিত হোমওয়ার্কের নিবিড় তদারকি ও কনসেপ্ট চেকলিস্ট',
+      'ব্যক্তিগত মনোযোগ নিশ্চিত করতে সীমিত শিক্ষার্থী ব্যাচ'
     ]
   },
   {
     id: 'class-10',
-    name: 'Class 10 Coaching Program',
-    level: 'Class 10 Students',
-    targetAudience: 'Class 10 students preparing for pre-test examinations and school evaluations.',
-    schedule: 'Saturday to Thursday (Class Days)',
-    timeSlot: '6:00 AM – 7:50 AM',
-    weeklyTests: 'Friday (Exam Day)',
+    name: '১০ম শ্রেণির কোচিং প্রোগ্রাম',
+    level: '১০ম শ্রেণি',
+    targetAudience: '১০ম শ্রেণির শিক্ষার্থীদের প্রাক-নির্বাচনী ও নির্বাচনী পরীক্ষার সফলতার জন্য।',
+    schedule: 'শনিবার থেকে বৃহস্পতিবার (ক্লাস)',
+    timeSlot: 'সকাল ৬:০০ – সকাল ৭:৫০',
+    weeklyTests: 'শুক্রবার (মূল্যায়ন পরীক্ষা দিন)',
     monthlyFee: 550,
-    description: 'Targeted academic excellence and concept strengthening program for Class 10 candidates. Prepares students through curriculum review, practice sheet solving, and mock exams.',
+    description: '১০ম শ্রেণির শিক্ষার্থীদের কোর্স সম্পন্নকরণ ও কনসেপ্ট ঝালাই করার বিশেষ প্রোগ্রাম। সিলেবাস রিভিশন, প্র্যাকটিস শিট সমাধান এবং মক টেস্টের মাধ্যমে নিখুঁত প্রস্তুতি।',
     highlights: [
-      'Extensive solving of question banks and school papers',
-      'Quick-solving shortcut guides for maths and science formula',
-      'In-depth feedback loops and customized study routines',
-      'Strict, standard-conforming board exam paper grading'
+      'বিভিন্ন স্বনামধন্য স্কুলের টেস্ট পেপারস ও প্রশ্ন ব্যাংক সমাধান',
+      'গণিত ও বিজ্ঞানের সূত্রের সংক্ষিপ্ত ও দ্রুত কৌশল (Shortcut Hacks)',
+      'কাস্টমাইজড স্টাডি রুটিন এবং পারফরম্যান্স ফিডব্যাক',
+      'বোর্ড পরীক্ষার স্ট্যান্ডার্ড অনুযায়ী লিখিত উত্তরপত্র মূল্যায়ন'
     ]
   },
   {
     id: 'ssc-batch',
-    name: 'SSC Batch Program',
-    level: 'SSC Board Candidates',
-    targetAudience: 'SSC candidate students aiming for GPA 5.00 through deep preparation.',
-    schedule: 'Saturday to Thursday (Class Days)',
-    timeSlot: '10:20 AM – 1:00 PM',
-    weeklyTests: 'Friday (Exam Day)',
+    name: 'এসএসসি ব্যাচ প্রোগ্রাম',
+    level: 'এসএসসি পরীক্ষার্থী',
+    targetAudience: 'জিপিএ-৫.০০ অর্জনের সুদৃঢ় লক্ষ্যে এসএসসি পরীক্ষার্থীদের জন্য চূড়ান্ত মক টেস্ট ও সমাধান ব্যাচ।',
+    schedule: 'শনিবার থেকে বৃহস্পতিবার (ক্লাস)',
+    timeSlot: 'সকাল ১০:২০ – দুপুর ১:০০',
+    weeklyTests: 'শুক্রবার (মূল্যায়ন পরীক্ষা দিন)',
     monthlyFee: 600,
-    description: 'High-intensity board preparation system targeting GPA 5.00. Focuses on full textbook review, previous board paper solving, creative patterns, and strict model test series.',
+    description: 'এসএসসিতে জিপিএ ৫.০০ নিশ্চিত করার উচ্চ-মানের প্রস্তুতি প্রোগ্রাম। সম্পূর্ণ বইয়ের রিভিশন, বিগত বছরের বোর্ড প্রশ্ন সলভ, এবং চূড়ান্ত মডেল টেস্ট সিরিজ।',
     highlights: [
-      'Full coverage of the board-approved syllabus with revision schedules',
-      'Exhaustive mock model testing modeled after board-level difficulty',
-      'Practical board answer script writing strategies and timing tricks',
-      'Direct, dedicated support and individual stress counseling'
+      'বোর্ড নির্ধারিত সিলেবাস অনুযায়ী সম্পূর্ণ প্রস্তুতি ও সুষম রিভিশন',
+      'বোর্ড স্ট্যান্ডার্ড অনুযায়ী চূড়ান্ত মডেল টেস্ট বা মক পরীক্ষা',
+      'উত্তরপত্রে সময় ব্যবস্থাপনা এবং সঠিক লিখন কৌশলের বিশেষ সেশন',
+      'পরীক্ষার মানসিক চাপ এবং ভীতি কাটানোর জন্য বিশেষ মোটিভেশন সেশন'
     ]
   }
 ];

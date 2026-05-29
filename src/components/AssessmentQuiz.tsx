@@ -51,9 +51,9 @@ export default function AssessmentQuiz() {
   };
 
   const categoryLabels: Record<string, string> = {
-    mathematics: '📐 Mathematics Challenge',
-    english: '✍ English Grammar Proficiency',
-    science: '🧪 General Science Essentials'
+    mathematics: '📐 গণিত',
+    english: '✍ ইংরেজি',
+    science: '🧪 বিজ্ঞান'
   };
 
   return (
@@ -63,13 +63,13 @@ export default function AssessmentQuiz() {
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-sm font-bold tracking-widest text-indigo-600 uppercase font-mono block mb-2">
-            ✍ ACADEMIC TESTING
+            ✍ একাডেমিক মূল্যায়ন পরীক্ষা
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Try a Live Mini-Assessment Challenge
+            লাইভ কুইজ বা মিনি-মূল্যায়ন টেস্ট দিন
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-500">
-            Practice our high-school curriculum evaluation. Choose a subject pathway below to test your conceptual skills in real-time.
+            আমাদের একাডেমিক মূল্যায়নের সরাসরি অভিজ্ঞতা নিন। রিয়েল-টাইমে আপনার মেধা বা মৌলিক স্কুলের দক্ষতা যাচাই করতে নিচে যেকোনো একটি বিষয় নির্বাচন করুন।
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function AssessmentQuiz() {
                   {categoryLabels[activeCategory].split(' ')[1]}
                 </span>
                 <span id="quiz-progress-indicator" className="text-xs font-mono text-gray-400 font-bold">
-                  QUESTION {currentIdx + 1} OF {questions.length}
+                  প্রশ্ন নম্বর {currentIdx + 1} / {questions.length}
                 </span>
               </div>
 
@@ -176,7 +176,7 @@ export default function AssessmentQuiz() {
                 <div id="quiz-explanation-box" className="p-5 bg-indigo-50/40 rounded-2xl border border-indigo-100 mt-6 animate-fade-in text-left">
                   <div className="flex items-center space-x-2 text-indigo-800 font-bold mb-1.5 text-xs sm:text-sm">
                     <BookOpen className="h-4.5 w-4.5" />
-                    <span>Academic Concept Breakdown</span>
+                    <span>একাডেমিক বিষয়ের সহজ বিশ্লেষণ</span>
                   </div>
                   <p id="quiz-explanation-text" className="text-gray-700 text-xs sm:text-sm leading-relaxed font-sans">
                     {currentQuestion.explanation}
@@ -193,7 +193,7 @@ export default function AssessmentQuiz() {
                     className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md cursor-pointer transition-all"
                   >
                     <span>
-                      {currentIdx + 1 === questions.length ? 'Evaluate Result' : 'Next Question'}
+                      {currentIdx + 1 === questions.length ? 'ফলাফল মূল্যায়ন করুন' : 'পরবর্তী প্রশ্ন'}
                     </span>
                     <ArrowRight className="h-4 w-4" />
                   </button>
@@ -211,10 +211,10 @@ export default function AssessmentQuiz() {
 
               <div className="space-y-2">
                 <span className="text-xs font-bold tracking-widest text-indigo-600 uppercase font-mono block">
-                  CONGRATULATIONS ON COMPLETING
+                  কুইজ সম্পন্ন করার জন্য আপনাকে অভিনন্দন!
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-                  Your Assessment Score Card
+                  আপনার কুইজ স্কোরকার্ড
                 </h3>
               </div>
 
@@ -224,7 +224,7 @@ export default function AssessmentQuiz() {
                   {score}/{questions.length}
                 </span>
                 <span className="text-[10px] text-indigo-500 font-bold font-mono tracking-wide mt-1 uppercase">
-                  CORRECT
+                  সঠিক উত্তর
                 </span>
               </div>
 
@@ -232,11 +232,11 @@ export default function AssessmentQuiz() {
               <div className="max-w-md mx-auto bg-gray-50 border border-gray-150 p-4 rounded-xl">
                 <p id="quiz-verdict" className="text-gray-700 font-sans text-xs sm:text-sm leading-relaxed">
                   {score === questions.length ? (
-                    <strong>✨ Absolute Distinction! Excellence is in your DNA. Keep up the brilliant streak!</strong>
+                    <strong>✨ অসাধারণ ফলাফল! আপনার একাডেমিক বুনিয়াদ অত্যন্ত চমৎকার। এই মেধা ও ধারাবাহিকতা বজায় রাখুন!</strong>
                   ) : score >= 2 ? (
-                    <strong>👍 Good Academic Base! With simple discipline and structured guidance, you can secure board-level GPA 5.00 easily.</strong>
+                    <strong>👍 ভালো একাডেমিক ভিত্তি! কিছুটা নিয়মতান্ত্রিক পড়ালেখা এবং সঠিক গাইডলাইনের মাধ্যমে আপনি পরীক্ষায় জিপিএ-৫.০০ নিশ্চিত করতে পারেন।</strong>
                   ) : (
-                    <strong>📖 Growth Opportunity! Our special care system dedicates attention specifically to building up core understanding in these modules.</strong>
+                    <strong>📖 আরও উন্নতির সুযোগ রয়েছে! আমাদের বিশেষ তদারকি ব্যবস্থা ও যত্নসহকারে প্রতিটি বিষয়ে বেসিক বা বুনিয়াদ তৈরি করতে সাহায্য করবে।</strong>
                   )}
                 </p>
               </div>
@@ -245,10 +245,10 @@ export default function AssessmentQuiz() {
               <div className="bg-indigo-950 text-indigo-50 p-5 rounded-2xl border border-indigo-800 text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="text-left space-y-1">
                   <span className="block text-teal-300 font-mono text-[10px] uppercase font-bold tracking-widest">
-                    Want regular exams evaluation?
+                    নিয়মিত কুইজ ও পরীক্ষা দিতে চান?
                   </span>
                   <p className="text-xs text-indigo-200">
-                    We host physical weekly exams & board-mock series with immediate feedback guides to build final prep.
+                    আমরা শিক্ষার্থীদের শতভাগ বোর্ড ও স্কুল সিলেবাসের রিয়েল-টাইম পরীক্ষা ও সমাধান শিট দিয়ে সেরা প্রস্তুতি প্রদান করি।
                   </p>
                 </div>
                 <a
@@ -260,7 +260,7 @@ export default function AssessmentQuiz() {
                   }}
                   className="bg-teal-500 hover:bg-teal-600 text-white text-xs font-bold font-mono px-4 py-2.5 rounded-xl shadow-md uppercase transition-all tracking-wider text-center shrink-0 cursor-pointer"
                 >
-                  Join Brilliant Today
+                  Brilliant-এ আজই ভর্তি হোন
                 </a>
               </div>
 
@@ -272,11 +272,11 @@ export default function AssessmentQuiz() {
                   className="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm cursor-pointer transition-all"
                 >
                   <RotateCcw className="h-4 w-4 text-gray-500" />
-                  <span>Try Again</span>
+                  <span>আবার টেস্ট দিন</span>
                 </button>
 
                 <div className="flex items-center text-xs text-gray-400 font-medium">
-                  <span>Or switch subject above</span>
+                  <span>অথবা ওপর থেকে অন্য বিষয় নির্বাচন করুন</span>
                 </div>
               </div>
 

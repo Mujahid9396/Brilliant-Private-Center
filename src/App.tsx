@@ -112,7 +112,7 @@ export default function App() {
         >
           {/* Label expanding dynamically on hover */}
           <span className="max-w-0 overflow-hidden group-hover:max-w-[200px] transition-all duration-300 ease-out text-sm font-bold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 pr-0 group-hover:pr-1 font-sans">
-            Chat on WhatsApp
+            WhatsApp-এ চ্যাট করুন
           </span>
           <svg className="h-6 w-6 sm:h-7 sm:w-7 fill-current shrink-0" viewBox="0 0 24 24">
             <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.336 4.993L2 22l5.132-1.347a9.96 9.96 0 004.878 1.277h.005c5.505 0 9.989-4.478 9.99-9.985A9.97 9.97 0 0012.012 2zm5.836 14.124c-.31.875-1.28 1.545-2.14 1.7-.58.1-1.34.19-3.9-1.01-3.26-1.53-5.36-4.83-5.52-5.05-.17-.22-1.31-1.74-1.31-3.32C4.981 6.86 5.86 6.08 6.18 5.75c.26-.27.57-.34.76-.34H8c.2 0 .42.06.6.5.21.52.74 1.8.8 1.92.06.12.1.27.02.43-.08.17-.18.27-.3.4l-.45.54c-.14.16-.29.34-.12.63a8.9 9.9 0 001.62 2c1.37 1.22 2.5 1.6 2.85 1.77.36.17.57.14.78-.1.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.8-.18s2.04 1 2.4.1.42.18.5.34c.08.17.08.97-.22 1.84z"/>
