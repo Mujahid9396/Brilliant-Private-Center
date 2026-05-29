@@ -1,0 +1,6 @@
+{
+  "name": "Brilliant Private Center",
+  "description": "Welcome to Brilliant Private Center, a trusted place for quality education and academic excellence. Your success is our mission.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
