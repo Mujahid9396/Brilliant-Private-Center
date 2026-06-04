@@ -106,12 +106,14 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
       setFormError('অনুগ্রহ করে পিতা / মাতার নাম প্রবেশ করান।');
       return;
     }
+    // Strip out all non-digit characters to get the clean number
+    const cleanPhone = phone.replace(/\D/g, '');
     if (!phone.trim()) {
       setFormError('অনুগ্রহ করে একটি সচল মোবাইল নম্বর দিন।');
       return;
     }
-    if (!/^\d{11,}$/.test(phone.replace(/\D/g, ''))) {
-      setFormError('১১ ডিজিটের সঠিক মোবাইল নম্বর দিন।');
+    if (cleanPhone.length !== 11) {
+      setFormError('অনুগ্রহ করে সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন (১১ ডিজিটের কম বা বেশি গ্রহণযোগ্য নয়)।');
       return;
     }
 
