@@ -464,7 +464,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+              <div className="pt-3">
                 <button
                   type="submit"
                   id="submit-inquiry-btn"
@@ -483,19 +483,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                     </>
                   )}
                 </button>
-
-                <a
-                  href={`mailto:mh.mujahid7758@gmail.com?subject=Academic Consultation Admission Inquiry&body=Dear Brilliant Private Center Head,%0D%0A%0D%0AI would like to submit an admission request with the following details:%0D%0A%0D%0A- Student Full Name: ${studentName || '[Please Enter Student Name]'}%0D%0A- Parent/Guardian Name: ${parentName || '[Please Enter Parent Name]'}%0D%0A- Contact Number: ${phone || '[Please Enter Phone Number]'}%0D%0A- Desired Program ID: ${selectedProgramId}%0D%0A- Specific Requirements/Notes: ${notes || 'None'}`}
-                  id="gmail-direct-link"
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white rounded-xl py-3.5 px-4 font-bold text-sm tracking-wide shadow-lg hover:shadow-teal-200 hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2 cursor-pointer"
-                >
-                  <Send className="h-4 w-4" />
-                  <span>জিমেইল (Gmail) দিয়ে পাঠান</span>
-                </a>
               </div>
-              <p className="text-[11px] text-gray-500 text-center mt-2 font-medium">
-                <strong className="text-teal-600">জিমেইল (Gmail) দিয়ে পাঠান</strong> বাটনে ক্লিক করলে সরাসরি আপনার পিসি বা ফোনের জিমেইল ব্যবহার করে <strong className="text-indigo-600">mh.mujahid7758@gmail.com</strong> ঠিকানায় আবেদন সম্পন্ন হবে।
-              </p>
 
             </form>
           </div>
