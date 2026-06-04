@@ -15,10 +15,24 @@ import {
   HeartHandshake,
   AlertCircle,
   HelpCircle,
-  Compass
+  Compass,
+  Settings,
+  LogOut,
+  FileText,
+  Globe
 } from 'lucide-react';
 import { Inquiry } from '../types';
 import { coursesData } from '../data/courses';
+import {
+  initiateGoogleAuth,
+  handleOAuthCallback,
+  getAccessToken,
+  logoutGoogle,
+  getOrCreateDocId,
+  appendToGoogleDoc,
+  getClientId,
+  saveCustomClientId
+} from '../utils/googleDocs';
 
 interface ContactInquiryProps {
   selectedProgramId: string;
@@ -40,8 +54,17 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
   // Inquiries list from localStorage
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
 
-  // Load inquiries
+  // Google Docs Sync States
+  const [googleToken, setGoogleToken] = useState<string | null>(null);
+  const [googleDocId, setGoogleDocId] = useState<string | null>(null);
+  const [customClientId, setCustomClientId] = useState('');
+  const [showDocsConfig, setShowDocsConfig] = useState(false);
+  const [googleSyncStatus, setGoogleSyncStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
+  const [googleSyncError, setGoogleSyncError] = useState<string | null>(null);
+
+  // Load inquiries & check Google configuration
   useEffect(() => {
+    // 1. Retrieve local inquiries
     const raw = localStorage.getItem('brilliant_coaching_inquiries');
     if (raw) {
       try {
@@ -50,13 +73,29 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
         console.error(err);
       }
     }
+
+    // 2. Handle Google OAuth redirect callback URL (hash fragment)
+    const tokenFromHash = handleOAuthCallback();
+    const token = tokenFromHash || getAccessToken();
+    if (token) {
+      setGoogleToken(token);
+      const savedDocId = localStorage.getItem('brilliant_google_doc_id');
+      if (savedDocId) {
+        setGoogleDocId(savedDocId);
+      }
+    }
+
+    // 3. Set custom Client ID configuration
+    setCustomClientId(getClientId());
   }, []);
 
   // Submit Handler
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
     setSuccessMsg(null);
+    setGoogleSyncStatus('idle');
+    setGoogleSyncError(null);
 
     // Validate fields
     if (!studentName.trim()) {
@@ -78,32 +117,105 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
 
     setIsSubmitting(true);
 
-    // Simulate database write
-    setTimeout(() => {
-      const newInquiry: Inquiry = {
-        id: 'BR-' + Math.floor(1000 + Math.random() * 9000),
-        studentName: studentName.trim(),
-        parentName: parentName.trim(),
-        phone: phone.trim(),
-        programId: selectedProgramId || 'primary-secondary',
-        submittedAt: new Date().toLocaleString(),
-        status: 'Received',
-        notes: notes.trim() || 'কোনো অতিরিক্ত তথ্য নেই'
-      };
+    const newInquiry: Inquiry = {
+      id: 'BR-' + Math.floor(1000 + Math.random() * 9000),
+      studentName: studentName.trim(),
+      parentName: parentName.trim(),
+      phone: phone.trim(),
+      programId: selectedProgramId || 'primary-secondary',
+      submittedAt: new Date().toLocaleString(),
+      status: 'Received',
+      notes: notes.trim() || 'কোনো অতিরিক্ত তথ্য নেই'
+    };
 
-      const updated = [newInquiry, ...inquiries];
-      localStorage.setItem('brilliant_coaching_inquiries', JSON.stringify(updated));
-      setInquiries(updated);
-      
-      // Clear Inputs
-      setStudentName('');
-      setParentName('');
-      setPhone('');
-      setNotes('');
-      setIsSubmitting(false);
+    // 1. Save to browser memories (guarantees local access)
+    const updated = [newInquiry, ...inquiries];
+    localStorage.setItem('brilliant_coaching_inquiries', JSON.stringify(updated));
+    setInquiries(updated);
 
-      setSuccessMsg(`সাফল্য! কুইজ বা ভর্তি আবেদন সফলভাবে রেজিস্টার করা হয়েছে। আপনার রেফারেন্স কোড হচ্ছে ${newInquiry.id}। আমাদের অ্যাডমিশন টিম আগামী ২ ঘণ্টার মধ্যে আপনার প্রদত্ত ${newInquiry.phone} নম্বরে সরাসরি কাউন্সেলিংয়ের জন্য কল করবে।`);
-    }, 1200);
+    // 2. Submit form database row directly to user's Google Apps Script Web App (Spreadsheet backend)
+    let appsScriptSuccess = false;
+    try {
+      const matchedCourse = coursesData.find(c => c.id === selectedProgramId);
+      const courseName = matchedCourse ? `${matchedCourse.name} (${matchedCourse.level})` : selectedProgramId;
+
+      await fetch('https://script.google.com/macros/s/AKfycbwvM4tHuT4JGxShf_XUVItkFWutfKqcQNBOv_zlU7vD7V6PTcRniv7vfYEnNqBOQgfM/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          referenceCode: newInquiry.id,
+          studentName: studentName.trim(),
+          parentName: parentName.trim(),
+          phoneNumber: phone.trim(),
+          coachingProgram: courseName,
+          specialNeeds: notes.trim() || 'কোনো অতিরিক্ত তথ্য নেই'
+        })
+      });
+      appsScriptSuccess = true;
+    } catch (err) {
+      console.error('Google Apps Script Submission Error:', err);
+    }
+
+    let docSaveSuccess = false;
+    let actualDocId = googleDocId;
+
+    // 3. Attempt to save to Google Docs if Google account is connected
+    if (googleToken) {
+      setGoogleSyncStatus('saving');
+      try {
+        // Retrieve or dynamically create Google Document
+        const activeDocId = await getOrCreateDocId(googleToken);
+        actualDocId = activeDocId;
+        setGoogleDocId(activeDocId);
+
+        // Render matching values
+        const matchedCourse = coursesData.find(c => c.id === selectedProgramId);
+        const courseName = matchedCourse ? `${matchedCourse.name} (${matchedCourse.level})` : selectedProgramId;
+        
+        // Structure content with human readability directly appended
+        const timestamp = new Date().toLocaleString('bn-BD', { timeZone: 'Asia/Dhaka' });
+        const formatContent = `\n=========================================\nআবেদন রেফারেন্স আইডি: ${newInquiry.id}\nদাখিলের সময় (ঢাকা): ${timestamp}\nশিক্ষার্থীর নাম: ${newInquiry.studentName}\nপিতা/মাতার নাম: ${newInquiry.parentName}\nমোবাইল নম্বর: ${newInquiry.phone}\nকোচিং প্রোগ্রাম: ${courseName}\nবিশেষ চাহিদা / নোট: ${newInquiry.notes}\n=========================================\n`;
+
+        await appendToGoogleDoc(googleToken, activeDocId, formatContent);
+        setGoogleSyncStatus('success');
+        docSaveSuccess = true;
+      } catch (err: any) {
+        console.error('Google Docs Sync Failure:', err);
+        setGoogleSyncStatus('error');
+        setGoogleSyncError(err.message || 'গুগল ডকসে লেখা যুক্ত করতে ব্যর্থ হয়েছে।');
+      }
+    }
+
+    // Clear Form Fields
+    setStudentName('');
+    setParentName('');
+    setPhone('');
+    setNotes('');
+    setIsSubmitting(false);
+
+    // Build success toast text
+    const feedback = `অভিনন্দন! ভর্তি আবেদন সফলভাবে সাবমিট হয়েছে। আপনার রেফারেন্স কোড হচ্ছে ${newInquiry.id}। আমাদের অ্যাডমিশন টিম আগামী ২ ঘণ্টার মধ্যে আপনার প্রদত্ত ${newInquiry.phone} নম্বরে সরাসরি কাউন্সেলিংয়ের জন্য কল করবে।`;
+    setSuccessMsg(feedback);
+  };
+
+  const handleConnectGoogle = () => {
+    initiateGoogleAuth();
+  };
+
+  const handleDisconnectGoogle = () => {
+    logoutGoogle();
+    setGoogleToken(null);
+    setGoogleDocId(null);
+    setGoogleSyncStatus('idle');
+  };
+
+  const handleSaveClientId = (e: React.FormEvent) => {
+    e.preventDefault();
+    saveCustomClientId(customClientId);
+    alert('অভিনন্দন! আপনার কাস্টম ক্লায়েন্ট আইডি ব্রাউজারে সফলভাবে সংরক্ষণ করা হয়েছে। আপনার জিমেইল কানেক্ট করতে Connect বাটনে ক্লিক করুন।');
   };
 
   const clearInquiries = () => {
@@ -340,7 +452,7 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
               {/* Special message note */}
               <div>
                 <label htmlFor="inquiry-notes" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
-                  विशेष কোনো চাহিদা বা দুর্বল বিষয়ে অতিরিক্ত ক্লাসের অনুরোধ
+                  বিশেষ কোনো চাহিদা বা দুর্বল বিষয়ে অতিরিক্ত ক্লাসের অনুরোধ
                 </label>
                 <textarea
                   id="inquiry-notes"
@@ -362,12 +474,12 @@ export default function ContactInquiry({ selectedProgramId, onProgramChange }: C
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>তথ্য সংরক্ষণ করা হচ্ছে...</span>
+                      <span>তথ্য সাবমিট করা হচ্ছে...</span>
                     </>
                   ) : (
                     <>
                       <CheckCircle className="h-4 w-4" />
-                      <span>মেমোরিতে সেভ করুন</span>
+                      <span>তথ্য সাবমিট করুন</span>
                     </>
                   )}
                 </button>
